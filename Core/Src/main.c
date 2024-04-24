@@ -18,6 +18,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "dma.h"
 #include "tim.h"
 #include "usart.h"
 #include "gpio.h"
@@ -91,11 +92,17 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_DMA_Init();
   MX_USART2_UART_Init();
   MX_TIM7_Init();
+  MX_TIM1_Init();
   /* USER CODE BEGIN 2 */
 
   HAL_TIM_Base_Start_IT(&htim7);
+
+  //	CONFIGURATION TIMER1:
+  TIM1->CCR1 = 3000;							//	Capture Compare Register,
+  HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);		//	Without making interrupt,
 
   /* USER CODE END 2 */
 
@@ -119,6 +126,7 @@ int main(void)
 		  flag_LED = 0;
 	  }
 
+	  /*
 	  for(uint8_t i=0; i<8; i++)
 	  {
 		  if(timer_LED[i] == 0)
@@ -127,7 +135,7 @@ int main(void)
 			  LED_tog(LED[i]);
 		  }
 	  }
-
+*/
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
