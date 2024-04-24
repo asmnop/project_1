@@ -10,4 +10,9 @@
 
 void init_software_timers(TIM_HandleTypeDef *htim);
 
+extern uint16_t timer_1;
+extern uint16_t timer_2;
+extern uint16_t timer_3;
+
+
 #endif /* INC_SOFTWARE_TIMERS_H_ */

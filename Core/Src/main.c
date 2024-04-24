@@ -100,6 +100,20 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+	  if(timer_1 == 0)
+	  {
+		  timer_1 = 500;
+		  HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
+		  //HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_SET);
+	  }
+/*
+	  if(timer_2 == 0)
+	  {
+		  timer_2 = 100;
+		  HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_RESET);
+	  }
+*/
+
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
