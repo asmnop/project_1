@@ -8,6 +8,6 @@
 #ifndef INC_SOFTWARE_TIMERS_H_
 #define INC_SOFTWARE_TIMERS_H_
 
-
+void init_software_timers(TIM_HandleTypeDef *htim);
 
 #endif /* INC_SOFTWARE_TIMERS_H_ */
