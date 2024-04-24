@@ -116,6 +116,53 @@ int main(void)
 		  flag_LED = 0;
 	  }
 
+	  if(timer_LED_1 == 0)
+	  {
+		  timer_LED_1 = 50;
+		  HAL_GPIO_TogglePin(LED_1_GPIO_Port, LED_1_Pin);
+	  }
+
+	  if(timer_LED_2 == 0)
+	  {
+		  timer_LED_2 = 100;
+		  HAL_GPIO_TogglePin(LED_2_GPIO_Port, LED_2_Pin);
+	  }
+
+	  if(timer_LED_3 == 0)
+	  {
+		  timer_LED_3 = 200;
+		  HAL_GPIO_TogglePin(LED_3_GPIO_Port, LED_3_Pin);
+	  }
+
+	  if(timer_LED_4 == 0)
+	  {
+		  timer_LED_4 = 400;
+		  HAL_GPIO_TogglePin(LED_4_GPIO_Port, LED_4_Pin);
+	  }
+
+	  if(timer_LED_5 == 0)
+	  {
+		  timer_LED_5 = 800;
+		  HAL_GPIO_TogglePin(LED_5_GPIO_Port, LED_5_Pin);
+	  }
+
+	  if(timer_LED_6 == 0)
+	  {
+		  timer_LED_6 = 1600;
+		  HAL_GPIO_TogglePin(LED_6_GPIO_Port, LED_6_Pin);
+	  }
+
+	  if(timer_LED_7 == 0)
+	  {
+		  timer_LED_7 = 3200;
+		  HAL_GPIO_TogglePin(LED_7_GPIO_Port, LED_7_Pin);
+	  }
+
+	  if(timer_LED_8 == 0)
+	  {
+		  timer_LED_8 = 6400;
+		  HAL_GPIO_TogglePin(LED_8_GPIO_Port, LED_8_Pin);
+	  }
 
     /* USER CODE END WHILE */
 
@@ -179,7 +226,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
 
 
-	init_software_timers(htim);
+	software_timers(htim);	//	Software timers,
 
 }
 

@@ -1,1 +1,1 @@
-../Core/Src/software_timers.c:15:6:init_software_timers	16	static
+../Core/Src/software_timers.c:24:6:software_timers	16	static
