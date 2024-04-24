@@ -69,6 +69,18 @@ int main(void)
   /* USER CODE BEGIN 1 */
 
 	uint16_t LED_state[8] = {50, 1000, 500, 250, 500, 10, 500, 20};
+	uint16_t DMA_data[10] = {0};
+
+	DMA_data[0] = 1000;
+	DMA_data[1] = 2000;
+	DMA_data[2] = 3000;
+	DMA_data[3] = 4000;
+	DMA_data[4] = 5000;
+	DMA_data[5] = 6000;
+	DMA_data[6] = 7000;
+	DMA_data[7] = 8000;
+	DMA_data[8] = 9000;
+	DMA_data[9] = 5000;
 
   /* USER CODE END 1 */
 
@@ -100,9 +112,13 @@ int main(void)
 
   HAL_TIM_Base_Start_IT(&htim7);
 
-  //	CONFIGURATION TIMER1:
-  TIM1->CCR1 = 3000;							//	Capture Compare Register,
-  HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);		//	Without making interrupt,
+  //	CONFIGURATION TIMER1 TO PWM:
+  //TIM1->CCR1 = 3000;							//	Capture Compare Register,
+  //HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);		//	Without making interrupt,
+
+
+  //	CONFIGURATION TIMER1 TO PWM TO WORK WITH DMA:
+  HAL_TIM_PWM_Start_DMA(&htim1, TIM_CHANNEL_1, (uint32_t *) DMA_data, 10);
 
   /* USER CODE END 2 */
 
