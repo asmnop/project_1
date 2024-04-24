@@ -14,10 +14,10 @@ typedef struct
 {
 	GPIO_TypeDef* port;
 	uint16_t pin;
-}pin_t;
+}line_t;
 
 
-static const pin_t LED[] =
+static const line_t LED[] =
 {
 	{ LED_1_GPIO_Port, LED_1_Pin },
 	{ LED_2_GPIO_Port, LED_2_Pin },
@@ -29,7 +29,8 @@ static const pin_t LED[] =
 	{ LED_8_GPIO_Port, LED_8_Pin },
 };
 
-void LED_tog(pin_t pin);
-void LED_state(pin_t pin, uint8_t state);
+void LED_tog(line_t pin);
+void LED_state(line_t pin, uint8_t state);
+
 
 #endif /* INC_LED_H_ */

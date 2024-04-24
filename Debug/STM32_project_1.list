@@ -27,23 +27,23 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   ALLOC
  11 .ARM.attributes 00000030  00000000  00000000  0002000c  2**0
                   CONTENTS, READONLY
- 12 .debug_info   00010f50  00000000  00000000  0002003c  2**0
+ 12 .debug_info   00010f4f  00000000  00000000  0002003c  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 13 .debug_abbrev 000023b6  00000000  00000000  00030f8c  2**0
+ 13 .debug_abbrev 000023a5  00000000  00000000  00030f8b  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 14 .debug_aranges 00000eb0  00000000  00000000  00033348  2**3
+ 14 .debug_aranges 00000eb0  00000000  00000000  00033330  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 15 .debug_ranges 00000db8  00000000  00000000  000341f8  2**3
+ 15 .debug_ranges 00000db8  00000000  00000000  000341e0  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_macro  00026b79  00000000  00000000  00034fb0  2**0
+ 16 .debug_macro  00026b79  00000000  00000000  00034f98  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_line   00012bad  00000000  00000000  0005bb29  2**0
+ 17 .debug_line   00012ba9  00000000  00000000  0005bb11  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    000f0612  00000000  00000000  0006e6d6  2**0
+ 18 .debug_str    000f0613  00000000  00000000  0006e6ba  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000050  00000000  00000000  0015ece8  2**0
+ 19 .comment      00000050  00000000  00000000  0015eccd  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  00003c7c  00000000  00000000  0015ed38  2**2
+ 20 .debug_frame  00003c7c  00000000  00000000  0015ed20  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -355,14 +355,14 @@ Disassembly of section .text:
 
 
 
-void LED_tog(pin_t pin)
+void LED_tog(line_t line)
 {
  80004cc:	b580      	push	{r7, lr}
  80004ce:	b082      	sub	sp, #8
  80004d0:	af00      	add	r7, sp, #0
  80004d2:	463b      	mov	r3, r7
  80004d4:	e883 0003 	stmia.w	r3, {r0, r1}
-	HAL_GPIO_TogglePin(pin.port, pin.pin);
+	HAL_GPIO_TogglePin(line.port, line.pin);
  80004d8:	683b      	ldr	r3, [r7, #0]
  80004da:	88ba      	ldrh	r2, [r7, #4]
  80004dc:	4611      	mov	r1, r2

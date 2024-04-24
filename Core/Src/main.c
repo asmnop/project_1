@@ -127,59 +127,7 @@ int main(void)
 			  LED_tog(LED[i]);
 		  }
 	  }
-/*
-	  ////////////////////////////////////////////////////////////////////////////////
-	  if(timer_LED_1 == 0)
-	  {
-		  timer_LED_1 = LED_state[0];
-		  //HAL_GPIO_TogglePin(LED_1_GPIO_Port, LED_1_Pin);
-		  LED_tog(LED[0]);
-	  }
 
-	  if(timer_LED_2 == 0)
-	  {
-		  timer_LED_2 = LED_state[1];
-		  //HAL_GPIO_TogglePin(LED_2_GPIO_Port, LED_2_Pin);
-		  LED_tog(LED[1]);
-
-	  }
-
-	  if(timer_LED_3 == 0)
-	  {
-		  timer_LED_3 = LED_state[2];
-		  LED_tog(LED[2]);
-	  }
-
-	  if(timer_LED_4 == 0)
-	  {
-		  timer_LED_4 = LED_state[3];
-		  LED_tog(LED[3]);
-	  }
-
-	  if(timer_LED_5 == 0)
-	  {
-		  timer_LED_5 = LED_state[4];
-		  LED_tog(LED[4]);
-	  }
-
-	  if(timer_LED_6 == 0)
-	  {
-		  timer_LED_6 = LED_state[5];
-		  LED_tog(LED[5]);
-	  }
-
-	  if(timer_LED_7 == 0)
-	  {
-		  timer_LED_7 = LED_state[6];
-		  LED_tog(LED[6]);
-	  }
-
-	  if(timer_LED_8 == 0)
-	  {
-		  timer_LED_8 = LED_state[7];
-		  LED_tog(LED[7]);
-	  }
-*/
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

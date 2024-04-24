@@ -11,15 +11,15 @@
 
 
 
-void LED_tog(pin_t pin)
+void LED_tog(line_t line)
 {
-	HAL_GPIO_TogglePin(pin.port, pin.pin);
+	HAL_GPIO_TogglePin(line.port, line.pin);
 }
 
 
-void LED_state(pin_t pin, uint8_t state)
+void LED_state(line_t line, uint8_t state)
 {
-	HAL_GPIO_WritePin(pin.port, pin.pin, state);
+	HAL_GPIO_WritePin(line.port, line.pin, state);
 }
 
 
