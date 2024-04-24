@@ -100,19 +100,22 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  if(timer_1 == 0)
+	  static uint8_t flag_LED = 0;
+
+	  if(timer_1 == 0 && flag_LED == 0)
 	  {
 		  timer_1 = 500;
-		  HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
-		  //HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_SET);
+		  HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_SET);
+		  flag_LED = 1;
 	  }
-/*
-	  if(timer_2 == 0)
+
+	  if(timer_1 == 0 && flag_LED == 1)
 	  {
-		  timer_2 = 100;
+		  timer_1 = 200;
 		  HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_RESET);
+		  flag_LED = 0;
 	  }
-*/
+
 
     /* USER CODE END WHILE */
 
