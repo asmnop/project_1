@@ -24,4 +24,7 @@ extern uint16_t timer_LED_6;
 extern uint16_t timer_LED_7;
 extern uint16_t timer_LED_8;
 
+extern uint16_t timer_LED[8];
+
+
 #endif /* INC_SOFTWARE_TIMERS_H_ */

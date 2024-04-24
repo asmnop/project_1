@@ -21,6 +21,8 @@ volatile uint16_t timer_LED_6 = 0;
 volatile uint16_t timer_LED_7 = 0;
 volatile uint16_t timer_LED_8 = 0;
 
+volatile uint16_t timer_LED[8] = {0};
+
 void software_timers(TIM_HandleTypeDef *htim)
 {
 	static uint16_t counter = 0;
@@ -46,6 +48,11 @@ void software_timers(TIM_HandleTypeDef *htim)
 		if(timer_LED_6)		timer_LED_6--;
 		if(timer_LED_7)		timer_LED_7--;
 		if(timer_LED_8)		timer_LED_8--;
+
+		for(uint8_t i=0; i<8; i++)
+		{
+			if(timer_LED[i])		timer_LED[i]--;
+		}
 
 	}
 

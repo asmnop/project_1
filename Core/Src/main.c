@@ -67,7 +67,7 @@ int main(void)
 {
   /* USER CODE BEGIN 1 */
 
-	uint16_t LED_state[8] = {50, 1000, 500, 250, 500, 250, 500, 250};
+	uint16_t LED_state[8] = {50, 1000, 500, 250, 500, 10, 500, 20};
 
   /* USER CODE END 1 */
 
@@ -119,6 +119,15 @@ int main(void)
 		  flag_LED = 0;
 	  }
 
+	  for(uint8_t i=0; i<8; i++)
+	  {
+		  if(timer_LED[i] == 0)
+		  {
+			  timer_LED[i] = LED_state[i];
+			  LED_tog(LED[i]);
+		  }
+	  }
+/*
 	  ////////////////////////////////////////////////////////////////////////////////
 	  if(timer_LED_1 == 0)
 	  {
@@ -170,7 +179,7 @@ int main(void)
 		  timer_LED_8 = LED_state[7];
 		  LED_tog(LED[7]);
 	  }
-
+*/
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
