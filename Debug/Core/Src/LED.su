@@ -1,0 +1,2 @@
+../Core/Src/LED.c:14:6:LED_tog	16	static
+../Core/Src/LED.c:20:6:LED_state	24	static

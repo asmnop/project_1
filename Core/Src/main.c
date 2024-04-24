@@ -24,6 +24,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "LED.h"
 #include "software_timers.h"
 /* USER CODE END Includes */
 
@@ -65,6 +66,8 @@ void SystemClock_Config(void);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
+
+	uint16_t LED_state[8] = {50, 1000, 500, 250, 500, 250, 500, 250};
 
   /* USER CODE END 1 */
 
@@ -116,52 +119,56 @@ int main(void)
 		  flag_LED = 0;
 	  }
 
+	  ////////////////////////////////////////////////////////////////////////////////
 	  if(timer_LED_1 == 0)
 	  {
-		  timer_LED_1 = 50;
-		  HAL_GPIO_TogglePin(LED_1_GPIO_Port, LED_1_Pin);
+		  timer_LED_1 = LED_state[0];
+		  //HAL_GPIO_TogglePin(LED_1_GPIO_Port, LED_1_Pin);
+		  LED_tog(LED[0]);
 	  }
 
 	  if(timer_LED_2 == 0)
 	  {
-		  timer_LED_2 = 100;
-		  HAL_GPIO_TogglePin(LED_2_GPIO_Port, LED_2_Pin);
+		  timer_LED_2 = LED_state[1];
+		  //HAL_GPIO_TogglePin(LED_2_GPIO_Port, LED_2_Pin);
+		  LED_tog(LED[1]);
+
 	  }
 
 	  if(timer_LED_3 == 0)
 	  {
-		  timer_LED_3 = 200;
-		  HAL_GPIO_TogglePin(LED_3_GPIO_Port, LED_3_Pin);
+		  timer_LED_3 = LED_state[2];
+		  LED_tog(LED[2]);
 	  }
 
 	  if(timer_LED_4 == 0)
 	  {
-		  timer_LED_4 = 400;
-		  HAL_GPIO_TogglePin(LED_4_GPIO_Port, LED_4_Pin);
+		  timer_LED_4 = LED_state[3];
+		  LED_tog(LED[3]);
 	  }
 
 	  if(timer_LED_5 == 0)
 	  {
-		  timer_LED_5 = 800;
-		  HAL_GPIO_TogglePin(LED_5_GPIO_Port, LED_5_Pin);
+		  timer_LED_5 = LED_state[4];
+		  LED_tog(LED[4]);
 	  }
 
 	  if(timer_LED_6 == 0)
 	  {
-		  timer_LED_6 = 1600;
-		  HAL_GPIO_TogglePin(LED_6_GPIO_Port, LED_6_Pin);
+		  timer_LED_6 = LED_state[5];
+		  LED_tog(LED[5]);
 	  }
 
 	  if(timer_LED_7 == 0)
 	  {
-		  timer_LED_7 = 3200;
-		  HAL_GPIO_TogglePin(LED_7_GPIO_Port, LED_7_Pin);
+		  timer_LED_7 = LED_state[6];
+		  LED_tog(LED[6]);
 	  }
 
 	  if(timer_LED_8 == 0)
 	  {
-		  timer_LED_8 = 6400;
-		  HAL_GPIO_TogglePin(LED_8_GPIO_Port, LED_8_Pin);
+		  timer_LED_8 = LED_state[7];
+		  LED_tog(LED[7]);
 	  }
 
     /* USER CODE END WHILE */
