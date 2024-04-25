@@ -27,6 +27,7 @@
 /* USER CODE BEGIN Includes */
 #include "LED.h"
 #include "software_timers.h"
+#include "TM1637.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -71,8 +72,8 @@ int main(void)
 	uint16_t LED_state[8] = {50, 1000, 500, 250, 500, 10, 500, 20};
 	uint16_t DMA_data[10] = {0};
 
-	DMA_data[0] = 1000;
-	DMA_data[1] = 2000;
+	DMA_data[0] = 3000;
+	DMA_data[1] = 7000;
 	DMA_data[2] = 3000;
 	DMA_data[3] = 4000;
 	DMA_data[4] = 5000;
@@ -112,6 +113,8 @@ int main(void)
 
   HAL_TIM_Base_Start_IT(&htim7);
 
+  TM1637_init();
+
   //	CONFIGURATION TIMER1 TO PWM:
   //TIM1->CCR1 = 3000;							//	Capture Compare Register,
   //HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);		//	Without making interrupt,
@@ -131,14 +134,14 @@ int main(void)
 	  if(timer_1 == 0 && flag_LED == 0)
 	  {
 		  timer_1 = 500;
-		  HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_SET);
+		  //HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_SET);
 		  flag_LED = 1;
 	  }
 
 	  if(timer_1 == 0 && flag_LED == 1)
 	  {
 		  timer_1 = 200;
-		  HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_RESET);
+		  //HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_RESET);
 		  flag_LED = 0;
 	  }
 
